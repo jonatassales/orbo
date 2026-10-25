@@ -22,7 +22,7 @@ try {
   assert.equal(pkg.author, 'jonatassales', 'author must use the owner handle without an invented email')
   assert.equal(pkg.repository?.url, 'git+https://github.com/jonatassales/orbo.git')
   assert.equal(pkg.bugs?.url, 'https://github.com/jonatassales/orbo/issues')
-  assert.equal(pkg.homepage, 'https://neongate.com.br/docs/orbz/overview')
+  assert.equal(pkg.homepage, 'https://github.com/jonatassales/orbo#readme')
   assert.match(read('LICENSE'), /Copyright \(c\) 2026 Neongate AI/)
   pass('npm identity and GitHub metadata identify the current owner; license identifies Neongate AI')
 

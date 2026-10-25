@@ -75,8 +75,8 @@ const semverPattern = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-(?:0|[1-9]\d
 if (semverPattern.test(pkg.version)) pass(`package version is canonical SemVer: ${pkg.version}`)
 else fail(`package version is not canonical SemVer: ${pkg.version}`)
 
-if (pkg.engines?.node === '24.x') pass('Node engine remains 24.x')
-else fail('Node engine must remain 24.x')
+if (pkg.engines?.node === '>=24' && Object.keys(pkg.engines).length === 1) pass('Node engine accepts Node.js 24 or newer')
+else fail('Node engine must be exactly >=24')
 
 const commitlint = require('./commitlint.config.cjs')
 if (commitlint.extends?.includes('@commitlint/config-conventional')) pass('Commitlint extends config-conventional')

@@ -106,3 +106,12 @@ status only when the corresponding evidence is available.
 - [SPEC-035](035-retire-account-derived-identity.spec.md): current owner metadata,
   Neongate AI copyright, and removal of the deprecated account-derived preset.
   A later major release is separately approved.
+
+## Node.js range and README refresh
+
+- [SPEC-036](036-accept-node-24-or-newer.spec.md): implemented for source; `engines.node` becomes
+  `>=24` so newer Node.js releases can install the package, and the CLI and package
+  audit stop requiring exactly major 24. Version `1.1.2`; do not publish from this change.
+- [SPEC-037](037-refresh-readme-and-orbo-banner.spec.md): implemented for source; revise the
+  consumer README, replace the Orbz banner with an Orbo wordmark, point the
+  documentation URL at the GitHub README, and fix stale OrbV text in active files.

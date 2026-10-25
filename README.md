@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/images/readme-banner.png" alt="Orbo voice presence component" width="100%">
+  <img src="./assets/images/readme-banner.png" alt="Orbo: a luminous gradient voice orb above the Orbo wordmark" width="100%">
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="https://neongate.com.br/docs/orbz/overview"><strong>Documentation</strong></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/jonatassales/orbo#readme"><strong>Documentation</strong></a>&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/orbo-voice"><strong>npm</strong></a>&nbsp;&nbsp;&nbsp;
   <a href="./LICENSE"><strong>MIT License</strong></a>
 </p>
@@ -30,9 +30,9 @@ interfaces. It gives a voice experience a visible identity through expressive
 motion, conversation states, configurable palettes, and provider-neutral voice
 APIs without requiring a framework-specific UI package.
 
-Orbo renders the native `<orb-o>` element. Your application keeps ownership of
-the persona, transcript UI, authentication, backend, memory, tools, quotas, and
-product logic.
+Orbo renders the native `<orb-o>` element and is installed from npm as
+`orbo-voice`. Your application keeps ownership of the persona, transcript UI,
+authentication, backend, memory, tools, quotas, and product logic.
 
 | Capability | What Orbo provides |
 | --- | --- |
@@ -50,21 +50,61 @@ product logic.
 
 ## Install
 
+Orbo is published to npm as `orbo-voice`:
+
 ```bash
 npm install orbo-voice
 ```
-
-Or:
 
 ```bash
 pnpm add orbo-voice
 ```
 
-Project setup from the published CLI:
+```bash
+yarn add orbo-voice
+```
+
+```bash
+bun add orbo-voice
+```
+
+### Requirements
+
+- **Node.js 24 or newer** to install the package, run the `orbo` setup command,
+  and import it from server-side code. The package declares
+  `"engines": { "node": ">=24" }`, so newer Node.js releases are accepted.
+- npm, pnpm, yarn, or bun.
+- A browser to run `<orb-o>`. The element registers only from browser code; see
+  [SSR and browser registration](#ssr-and-browser-registration).
+
+### Project setup
+
+From the root of an existing JavaScript project, the published CLI installs
+Orbo for you:
 
 ```bash
 npx orbo-voice --setup
 ```
+
+Setup requires an existing `package.json`, detects your package manager from
+`packageManager`, then your lockfile (npm is the fallback), adds `orbo-voice` to
+`dependencies`, and prints the registration snippet. It never creates or
+overwrites application source files.
+
+Options go after the binary name. Use the explicit package-and-binary form so
+`npx` does not have to infer which binary to run:
+
+```bash
+npx -y --package=orbo-voice@latest orbo --package-manager pnpm --dry-run
+```
+
+| Option | Purpose |
+| --- | --- |
+| `--project <directory>` | Set up another project directory instead of the current one |
+| `--package-manager <manager>` | Choose `npm`, `pnpm`, `yarn`, or `bun` explicitly |
+| `--package-spec <specifier>` | Install a specific `orbo-voice` version or tag, such as `orbo-voice@1.1.2` |
+| `--dry-run` | Print the install command without running it |
+| `--force` | Run the install even when `orbo-voice` is already a dependency |
 
 <br>
 
@@ -590,13 +630,14 @@ host element gets its meaning from your application.
 | `orbo-voice/react-types` | React JSX type augmentation |
 | `orbo-voice/standalone` | Direct-browser/CDN bundle |
 | `orbo-voice/index.css` | Explicit stylesheet export |
+| `orbo` (binary) | Project setup command, run with `npx orbo-voice --setup` |
 
-The README is intentionally focused on **using Orbo in an application**. Deeper
-integration guides and API documentation are available at
-[neongate.com.br/docs/orbz/overview](https://neongate.com.br/docs/orbz/overview).
+The README is intentionally focused on **using Orbo in an application**. Source
+code, issues, and releases live in the
+[jonatassales/orbo](https://github.com/jonatassales/orbo) repository.
 
 <p align="center">
-  <a href="https://neongate.com.br/docs/orbz/overview"><strong>Read the documentation →</strong></a>
+  <a href="https://github.com/jonatassales/orbo"><strong>View Orbo on GitHub →</strong></a>
 </p>
 
 <br>

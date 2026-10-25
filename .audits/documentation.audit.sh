@@ -65,7 +65,7 @@ done
 # outside the npm-facing README.
 if awk '
   BEGIN {
-    expected[1] = "<a href=\"https://neongate.com.br/docs/orbz/overview\"><strong>Documentation</strong></a>"
+    expected[1] = "<a href=\"https://github.com/jonatassales/orbo#readme\"><strong>Documentation</strong></a>"
     expected[2] = "<a href=\"https://www.npmjs.com/package/orbo-voice\"><strong>npm</strong></a>"
     expected[3] = "<a href=\"./LICENSE\"><strong>MIT License</strong></a>"
   }

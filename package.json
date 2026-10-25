@@ -1,6 +1,6 @@
 {
   "name": "orbo-voice",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A framework-agnostic, customizable AI voice orb built as a strict, SSR-safe web component.",
   "type": "module",
   "license": "MIT",
@@ -28,8 +28,9 @@
   "bugs": {
     "url": "https://github.com/jonatassales/orbo/issues"
   },
-  "homepage": "https://neongate.com.br/docs/orbz/overview",
+  "homepage": "https://github.com/jonatassales/orbo#readme",
   "keywords": [
+    "orbo",
     "ai-voice",
     "voice-ui",
     "framework-agnostic",
@@ -91,6 +92,6 @@
     "./dist/standalone/orbo.js"
   ],
   "engines": {
-    "node": "24.x"
+    "node": ">=24"
   }
 }

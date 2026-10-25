@@ -5,7 +5,7 @@ alwaysApply: true
 # Rule 001: Package contract
 
 - Effective: 2026-08-21
-- Updated: 2026-09-24
+- Updated: 2026-10-25
 - Priority: Critical
 - Applies: Always
 
@@ -29,3 +29,7 @@ alwaysApply: true
     canonical identifier `neongate`, its established colors and six-name preset
     list. Account-derived aliases are retired by SPEC-035; do not promote account
     handles into preset branding.
+13. `engines.node` is `>=24` (SPEC-036). Consumers on any newer Node.js release
+    must be able to install the package. Raising the floor or pinning an exact
+    major again is a compatibility break. `.nvmrc` pins the development and CI
+    toolchain only; it is not the consumer contract.
