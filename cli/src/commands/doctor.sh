@@ -38,9 +38,9 @@ printf 'Orbo engineering doctor\n'
 if orb_has node; then
   node_version=$(node --version 2>/dev/null || true)
   node_major=$(printf '%s' "$node_version" | sed 's/^v\([0-9][0-9]*\).*/\1/')
-  if [ "$node_major" = 24 ]; then pass node "$node_version"; else fail node "$node_version" 'Install the version from .nvmrc.'; fi
+  if [ "$node_major" -ge 24 ] 2>/dev/null; then pass node "$node_version"; else fail node "$node_version" 'Install Node.js 24 or newer; .nvmrc pins the development version.'; fi
 else
-  fail node 'not available' 'Install Node.js 24.'
+  fail node 'not available' 'Install Node.js 24 or newer.'
 fi
 
 expected_pnpm=$(orb_package_value packageManager 2>/dev/null | sed 's/^pnpm@//' || true)

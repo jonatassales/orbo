@@ -17,7 +17,7 @@ orb_need pnpm
 orb_need git
 
 node_major=$(node -p "process.versions.node.split('.')[0]")
-[ "$node_major" = 24 ] || orb_die "Node.js 24 is required; found $(node --version)."
+[ "$node_major" -ge 24 ] || orb_die "Node.js 24 or newer is required; found $(node --version)."
 
 cd "$ORB_PROJECT_ROOT"
 orb_print_info 'Installing the Orbo dependency graph'

@@ -11,6 +11,11 @@ Commit messages follow Conventional Commits. Release planning maps `fix` and
 to major changes. `package.json#version` must be canonical SemVer. A staged
 version change must move forward relative to `HEAD`.
 
+`package.json#engines.node` is `>=24`: Node.js 24 or any newer release may install
+and run the package (SPEC-036). `.nvmrc` pins the development and CI toolchain and
+is not the consumer contract. An exact-major `engines` value makes strict package
+managers such as pnpm reject installs on newer Node.js releases.
+
 A release-oriented source change runs `orbo check`; CI also lints commit history
 through the checked-in Orbo entry point and runs `npm pack --dry-run`. The
 `prepack` lifecycle delegates to the same Orbo gate. New exports, attributes,

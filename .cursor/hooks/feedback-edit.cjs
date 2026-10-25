@@ -58,7 +58,7 @@ process.stdin.on('end', () => {
     if (result.stdout) process.stderr.write(result.stdout)
     if (result.stderr) process.stderr.write(result.stderr)
   } catch {
-    // Feedback hooks are advisory. CI and orb check remain authoritative.
+    // Feedback hooks are advisory. CI and orbo check remain authoritative.
   }
 
   finish()
